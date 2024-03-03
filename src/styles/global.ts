@@ -2,17 +2,16 @@ import { createGlobalStyle, css } from "styled-components";
 
 export default createGlobalStyle`
   ${({theme}) => css`
-    @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&display=swap');
-
     * {
       background: ${theme.colors.background};
-      color: ${theme.colors.text};
-      padding: 0;
-      margin: 0;
       box-sizing: border-box;
+      color: ${theme.colors.text};
       font-family: 'Lexend', sans-serif;
-      text-align: start;
+      margin: 0;
+      padding: 0;
       scroll-behavior: smooth;
+      text-align: start;
+      transition: background .2s;
     }
 
     body {

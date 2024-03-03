@@ -15,7 +15,6 @@ function App() {
         <GlobalStyle />
         <Header />
         <Outlet />
-        Olá, mundo
       </ThemeProvider>
     </main>
   );
