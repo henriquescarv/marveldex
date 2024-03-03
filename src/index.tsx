@@ -6,6 +6,9 @@ import { Provider } from 'react-redux';
 import { store } from './store/store';
 import { ThemeModeProvider } from 'providers/ThemeModeProvider/ThemeModeProvider';
 import { HeroHandler } from 'pages/HeroHandler';
+import { ComicHandler } from 'pages/ComicHandler';
+import { AuthorHandler } from 'pages/AuthorHandler';
+import { LoginHandler } from 'pages/LoginHandler';
 
 const router = createBrowserRouter([
 	{
@@ -13,8 +16,20 @@ const router = createBrowserRouter([
 		element: <App />,
 		children: [
 			{
+				path: '/login',
+				element: <LoginHandler />
+			},
+			{
 				path: '/characters',
 				element: <HeroHandler />
+			},
+			{
+				path: '/comics',
+				element: <ComicHandler />
+			},
+			{
+				path: '/authors',
+				element: <AuthorHandler />
 			}
 		],
 	}

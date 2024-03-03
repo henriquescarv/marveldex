@@ -2,9 +2,9 @@ import React from "react";
 import * as Styles from './NavbarButton.styles';
 import { ButtonProps } from "./NavbarButton.types";
 
-const NavbarButton = ({ onClick, label, icon }: ButtonProps) => {
+const NavbarButton = ({ onClick, label, icon, disabled = false }: ButtonProps) => {
   return (
-    <Styles.Button onClick={onClick}>
+    <Styles.Button onClick={onClick} disabled={disabled}>
       {label && label}
       {icon && icon}
     </Styles.Button>

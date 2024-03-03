@@ -2,8 +2,10 @@ const darkTheme = {
   title: 'dark',
 
   colors: {
-    background: '#000',
-    text: '#FFF',
+    primaryLight: '#000',
+    highLight: '#4F4F4F',
+    primaryDark: '#FFF',
+    primaryRed: '#F04343',
   },
 
   breakpoints: {

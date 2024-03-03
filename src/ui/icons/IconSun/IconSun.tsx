@@ -2,7 +2,7 @@ import GetColors from "ui/utils/GetColors/GetColors";
 import { IconProps } from "../IconDefault.types";
 import React from "react";
 
-const IconSun = ({size = 20, color = 'primaryDark'}: IconProps) => (
+const IconSun = ({size = 20, color = 'primaryLight'}: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     className="svg-icon"

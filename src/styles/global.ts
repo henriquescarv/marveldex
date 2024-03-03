@@ -3,9 +3,9 @@ import { createGlobalStyle, css } from "styled-components";
 export default createGlobalStyle`
   ${({theme}) => css`
     * {
-      background: ${theme.colors.background};
+      background: ${theme.colors.primaryLight};
       box-sizing: border-box;
-      color: ${theme.colors.text};
+      color: ${theme.colors.primaryDark};
       font-family: 'Lexend', sans-serif;
       margin: 0;
       padding: 0;
