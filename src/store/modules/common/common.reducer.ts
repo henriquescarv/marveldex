@@ -1,19 +1,31 @@
 import { CommonActionTypes, CommonState } from './common.types';
 
 const initialState: CommonState = {
-  publicKey: '',
-  privateKey: '',
+  loading: false,
+  status: '',
 }
 
 const CommonReducer = (state = initialState, action: any) => {
   switch(action.type) {
-    case CommonActionTypes.SET_CREDENTIALS:
-      const credentialsPayload = action.payload.values;
-
+    case CommonActionTypes.SET_CREDENTIALS_LOADING:
       return {
         ...state,
-        publicKey: credentialsPayload.publicKey,
-        privateKey: credentialsPayload.privateKey,
+        loading: action.payload.loading,
+      }
+    case CommonActionTypes.SET_CREDENTIALS_SUCCESS:
+      return {
+        ...state,
+        status: 'SUCCESS',
+      }
+    case CommonActionTypes.SET_CREDENTIALS_FAILURE:
+      return {
+        ...state,
+        status: 'FAILURE',
+      }
+    case CommonActionTypes.RESET_CREDENTIALS_STATUS:
+      return {
+        ...state,
+        status: initialState.status,
       }
     default:
       return {

@@ -1,9 +1,14 @@
-export enum CommonActionTypes {
+export enum HeroActionTypes {
   REQUEST_CHARACTERS = 'REQUEST_CHARACTERS',
   SET_CHARACTERS = 'SET_CHARACTERS',
   SET_LOADING_CHARACTERS = 'SET_LOADING_CHARACTERS',
+
+  SET_HERO_FILTER = 'SET_HERO_FILTER',
+  CLEAR_CHARACTERS_LIST = 'CLEAR_CHARACTERS_LIST',
+
+  CLEAR_HERO_STATE = 'CLEAR_HERO_STATE',
 };
 
-export type CommonState = {
+export type HeroState = {
   characters: any,
 }

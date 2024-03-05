@@ -29,6 +29,11 @@ export const ButtonsWrapper = styled.div`
   gap: 64px;
 `;
 
+export const RightButtons = styled.div`
+  display: flex;
+  gap: 12px;
+`;
+
 export const Logo = styled.img`
   width: 98px;
   user-drag: none;

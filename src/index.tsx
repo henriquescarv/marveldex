@@ -9,6 +9,7 @@ import { HeroHandler } from 'pages/HeroHandler';
 import { ComicHandler } from 'pages/ComicHandler';
 import { AuthorHandler } from 'pages/AuthorHandler';
 import { LoginHandler } from 'pages/LoginHandler';
+import { SnackbarProvider } from 'providers/SnackbarProvider/SnackbarProvider';
 
 const router = createBrowserRouter([
 	{
@@ -38,9 +39,11 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
 		<ThemeModeProvider>
-			<Provider store={store}>
-				<RouterProvider router={router} />
-			</Provider>
+			<SnackbarProvider>
+				<Provider store={store}>
+					<RouterProvider router={router} />
+				</Provider>
+			</SnackbarProvider>
 		</ThemeModeProvider>
   </React.StrictMode>
 );

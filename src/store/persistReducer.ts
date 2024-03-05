@@ -1,14 +1,17 @@
 import storage from "redux-persist/lib/storage";
-import { persistReducer } from "redux-persist";
+import { persistReducer as persistor } from "redux-persist";
 
-export default (reducers: any) => {
-  const persistedReducer = persistReducer(
+const persistReducer = (reducers: any) => {
+  const persistedReducer = persistor(
     {
       key: "react-structure",
       storage,
       whitelist: ["auth", "user", "root","training"],
     },
-    reducers
+    reducers,
   );
+
   return persistedReducer;
 };
+
+export default persistReducer;

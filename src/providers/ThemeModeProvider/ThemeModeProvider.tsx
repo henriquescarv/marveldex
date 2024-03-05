@@ -2,6 +2,7 @@ import React, { createContext, useState } from 'react';
 import { ThemeModeContextProps, ThemeModeProviderProps } from './ThemeModeProvider.types';
 import light from 'styles/themes/light';
 import dark from 'styles/themes/dark';
+import useCredentials from 'hooks/useCredentials/useCredentials';
 
 const ThemeModeContextDefault = {
 	theme: light,
@@ -11,7 +12,21 @@ const ThemeModeContextDefault = {
 export const ThemeModeContext = createContext<ThemeModeContextProps>(ThemeModeContextDefault);
 
 export const ThemeModeProvider = ({ children }: ThemeModeProviderProps) => {
-	const [theme, setTheme] = useState(light);
+	const { globalTheme } = useCredentials();
+
+	const defaultTheme = () => {
+		const browserInDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+		if (globalTheme) {
+			return globalTheme === 'dark' ? dark : light;
+		}
+		if (browserInDarkMode) {
+			return dark;
+		}
+		return light;
+	};
+
+	const [theme, setTheme] = useState(defaultTheme());
 
 	const handleSetTheme = (themeName: string) => {
     themeName === 'light' ? setTheme(light) : setTheme(dark);

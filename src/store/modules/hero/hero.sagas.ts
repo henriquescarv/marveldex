@@ -1,28 +1,38 @@
-import { call, put, takeLatest } from "redux-saga/effects";
-import commonActions from './hero.actions';
-import { CommonActionTypes } from "./hero.types";
+import { call, put, select, takeLatest } from "redux-saga/effects";
+import heroActions from './hero.actions';
+import { HeroActionTypes } from "./hero.types";
 import service from "service/service";
 import md5 from "md5";
 
-function* getCharacters(): any {
-  const credentials = { // depois vão vir do action.payload
-    publicKey: '0a1fdf436215f99d674d4d1d9d76e906',
-    privateKey: 'bcada1ac7be94e76c28a22ddc4530e0326e691cb',
-  };
+function* getCharacters(action: any): any {
+  const payload = action.payload;
+  // publicKey: '0a1fdf436215f99d674d4d1d9d76e906',
+  // privateKey: 'bcada1ac7be94e76c28a22ddc4530e0326e691cb',
 
   const time = Number(new Date());
-  const hash = md5(time + credentials.privateKey + credentials.publicKey).toString();
+  const hash = md5(time + payload.privateKey + payload.publicKey).toString();
 
+  yield put(heroActions.characters.setLoading(true));
   try {
-    const response = yield call(service.get, `/characters?apikey=${credentials.publicKey}&ts=${time}&hash=${hash}`);
-    yield put(commonActions.characters.set(response.data));
+    const baseUrl = `limit=${payload.limit}&offset=${payload.offset}&apikey=${payload.publicKey}&ts=${time}&hash=${hash}`;
+    const filter = yield select(state => state.hero.characters.filter);
+
+    let response;
+    if (filter) {
+      response = yield call(service.get, `/characters?nameStartsWith=${filter}&${baseUrl}`);
+    } else {
+      response = yield call(service.get, `/characters?${baseUrl}`);
+    }
+
+    yield put(heroActions.characters.set(response.data));
   } catch (error) {
-    alert('deu erro :/')
+    
   }
+  yield put(heroActions.characters.setLoading(false));
 }
 
 function* sagas() {
-  yield takeLatest(CommonActionTypes.REQUEST_CHARACTERS, getCharacters);
+  yield takeLatest(HeroActionTypes.REQUEST_CHARACTERS, getCharacters);
 };
 
 export default sagas;

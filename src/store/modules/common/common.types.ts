@@ -1,13 +1,29 @@
 export enum CommonActionTypes {
+  GET_COOKIE_CREDENTIALS = 'GET_COOKIE_CREDENTIALS',
+  GET_CREDENTIALS = 'GET_CREDENTIALS',
   SET_CREDENTIALS = 'SET_CREDENTIALS',
+
+  SET_CREDENTIALS_SUCCESS = 'SET_CREDENTIALS_SUCCESS',
+  SET_CREDENTIALS_FAILURE = 'SET_CREDENTIALS_FAILURE',
+  RESET_CREDENTIALS_STATUS = 'RESET_CREDENTIALS_STATUS',
+
+  SET_CREDENTIALS_LOADING = 'SET_CREDENTIALS_LOADING',
+
+  SET_GLOBAL_THEME = 'SET_GLOBAL_THEME',
+  SET_THEME_SUCCESS = 'SET_THEME_SUCCESS',
+  SET_THEME_ERROR = 'SET_THEME_ERROR',
+
+  CLEAR_ALL = 'CLEAR_ALL',
 };
 
 export type Credentials = {
   publicKey: string,
   privateKey: string,
+  offset?: number,
+  limit?: number,
 }
 
 export type CommonState = {
-  publicKey: string,
-  privateKey: string,
+  loading: boolean,
+  status: string,
 }

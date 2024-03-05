@@ -1,16 +1,18 @@
-import { CommonActionTypes, CommonState } from './hero.types';
+import { HeroActionTypes, HeroState } from './hero.types';
 
-const initialState: CommonState = {
+const initialState: HeroState = {
   characters: {
     loading: false,
+    filter: '',
+    totalItems: 0,
     list: [],
   }
 }
 
-const CommonReducer = (state = initialState, action: any) => {
+const HeroReducer = (state = initialState, action: any) => {
   switch(action.type) {
-    case CommonActionTypes.SET_LOADING_CHARACTERS:
-      const { loading } = action.payload.values;
+    case HeroActionTypes.SET_LOADING_CHARACTERS:
+      const { loading } = action.payload;
 
       return {
         ...state,
@@ -19,13 +21,39 @@ const CommonReducer = (state = initialState, action: any) => {
           loading: loading,
         },
       }
-    case CommonActionTypes.SET_CHARACTERS:
+    case HeroActionTypes.SET_HERO_FILTER:
+      const { filter } = action.payload;
+
       return {
         ...state,
         characters: {
           ...state.characters,
-          list: action.payload.data.results,
+          filter: filter,
         },
+      }
+    case HeroActionTypes.CLEAR_CHARACTERS_LIST:
+      return {
+        ...state,
+        characters: {
+          ...state.characters,
+          list: [],
+        },
+      }
+    case HeroActionTypes.SET_CHARACTERS:
+      return {
+        ...state,
+        characters: {
+          ...state.characters,
+          totalItems: action.payload.data.total,
+          list: [
+            ...state.characters.list,
+            ...action.payload.data.results
+          ],
+        },
+      }
+    case HeroActionTypes.CLEAR_HERO_STATE:
+      return {
+        ...initialState,
       }
     default:
       return {
@@ -34,4 +62,4 @@ const CommonReducer = (state = initialState, action: any) => {
   }
 };
 
-export default CommonReducer;
+export default HeroReducer;

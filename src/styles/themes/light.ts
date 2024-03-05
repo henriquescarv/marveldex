@@ -2,10 +2,16 @@ const lightTheme = {
   title: 'light',
 
   colors: {
+    defaultLight: '#FFF',
+    defaultDark: '#000',
+
     primaryLight: '#FFF',
-    highLight: '#C4C4C4',
     primaryDark: '#000',
-    primaryRed: '#F32D2D',
+    highLight: '#C4C4C4',
+    lowLight: '#303030',
+
+    primaryRed: '#F2264B',
+    primaryGreen: '#22BB5F',
   },
 
   breakpoints: {
