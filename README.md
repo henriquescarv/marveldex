@@ -2,7 +2,6 @@
 
 MarvelDex é uma aplicação que possui o objetivo de consumir a API da Marvel, trazendo listagens de heróis, histórias e autores, possibilitando, também, a filtragem por nome em cada página.
 
-Deploy: [https://globo.com/](https://globo.com/)
 
 ![nav](./src/assets/images/screen_demo.png)
 
