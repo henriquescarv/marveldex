@@ -13,15 +13,15 @@ Deploy: [marveldex.vercel.app](http://marveldex.vercel.app/)
 
 Este projeto foi construído utilizando as seguintes tecnologias:
 
-- ReactJS: para a criação de toda a interface das páginas;
+- ReactJS: criação de toda a interface das páginas;
 - TypeScript: tipagem estática do código;
-- Styled-components: para estilização dinâmica dos componentes;
-- axios: para realizar as chamadas à API.
-- md5: função para a criação do hash das chaves + timestamp, exigido pela API.
-- redux: armazenamento e gerenciamento de estados.
-- react-router-dom: gerenciamento de rotas e navegação entre as páginas.
+- Styled-components: estilização dinâmica dos componentes;
+- Axios: para realizar as chamadas à API.
+- md5: função criação do hash das chaves + timestamp, exigido pela API.
+- Redux: armazenamento e gerenciamento de estados.
+- React Router Dom: gerenciamento de rotas e navegação entre as páginas.
 
-## Configurações iniciais:
+## Configurações iniciais (localhost):
 
 1. É necessário possuir o [Yarn instalado](https://classic.yarnpkg.com/en/docs/install/);
 2. Clonar este [repositório](https://github.com/henriquescarv/marveldex);
