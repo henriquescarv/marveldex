@@ -56,8 +56,8 @@ const Header = () => {
           </Styles.ButtonsWrapper>
         )}
         <Styles.RightButtons>
-          <NavbarButton onClick={handleSetTheme} icon={mountThemeIcon} />
-          {!isLoginPage && <NavbarButton onClick={handleLogout} icon={<IconLogout />} />}
+          <NavbarButton onClick={handleSetTheme} icon={mountThemeIcon} title="Set global theme" />
+          {!isLoginPage && <NavbarButton onClick={handleLogout} icon={<IconLogout />} title="Disconnect credentials" />}
         </Styles.RightButtons>
       </Styles.NavbarWrapper>
     </Styles.Header>
