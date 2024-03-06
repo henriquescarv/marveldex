@@ -15,6 +15,7 @@ Este projeto foi construído utilizando as seguintes tecnologias:
 
 - ReactJS: para a criação de toda a interface das páginas;
 - TypeScript: tipagem estática do código;
+- Styled-components: para estilização dinâmica dos componentes;
 - axios: para realizar as chamadas à API.
 - md5: função para a criação do hash das chaves + timestamp, exigido pela API.
 - redux: armazenamento e gerenciamento de estados.
