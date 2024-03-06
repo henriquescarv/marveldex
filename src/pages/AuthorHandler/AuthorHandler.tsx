@@ -48,7 +48,7 @@ const AuthorHandler = () => {
     const imageSrc = `${author.thumbnail.path}.${author.thumbnail.extension}`;
 
     return (
-      <Card name={author.fullName} imageSrc={imageSrc} testId={author.id.toString()} />
+      <Card name={author.fullName} imageSrc={imageSrc} key={author.id} />
     );
   };
 

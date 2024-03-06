@@ -14,9 +14,10 @@ export const Wrapper = styled.section`
 `;
 
 export const CardsContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 8px;
+  grid-template-columns: repeat(6, 1fr);
+  max-width: 100%;
 `;
 
 export const ButtonWrapper = styled.div`

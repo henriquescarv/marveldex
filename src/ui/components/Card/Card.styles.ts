@@ -4,7 +4,6 @@ export const Card = styled.div`
   ${({ theme }) => css`
     border: 1px solid ${theme.colors.highLight};
     border-radius: 16px;
-    width: 180px;
     height: 240px;
   `};
 `;

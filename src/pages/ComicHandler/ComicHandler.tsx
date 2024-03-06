@@ -53,7 +53,7 @@ const ComicHandler = () => {
     }
 
     return (
-      <Card name={comic.title} imageSrc={imageSrc} testId={comic.id.toString()} />
+      <Card name={comic.title} imageSrc={imageSrc} key={comic.id} />
     );
   };
 

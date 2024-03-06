@@ -52,7 +52,7 @@ const HeroHandler = () => {
     }
 
     return (
-      <Card name={character.name} imageSrc={imageSrc} testId={character.id.toString()} />
+      <Card name={character.name} imageSrc={imageSrc} key={character.id} />
     );
   };
 
