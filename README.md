@@ -2,7 +2,7 @@
 
 MarvelDex é uma aplicação que possui o objetivo de consumir a API da Marvel, trazendo listagens de heróis, histórias e autores, possibilitando, também, a filtragem por nome em cada página.
 
-Deploy: [marveldex.vercel.app](marveldex.vercel.app)
+Deploy: [marveldex.vercel.app](http://marveldex.vercel.app/)
 
 
 ![nav](./src/assets/images/screen_demo.png)
