@@ -21,6 +21,7 @@ export const Tooltip = styled.div`
     background: ${theme.colors.lowLight};
     border-radius: 4px;
     color: ${theme.colors.primaryLight};
+    font-size: 14px;
     font-weight: 400;
     margin-top: -32px;
     max-width: 360px;
@@ -29,9 +30,5 @@ export const Tooltip = styled.div`
     position: fixed;
     text-overflow: ellipsis;
     white-space: nowrap;
-
-    @media (max-width: ${theme.breakpoints.tablet}) {
-      font-size: 14px;
-    }
   `};
 `;

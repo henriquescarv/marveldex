@@ -7,7 +7,7 @@ const Card = ({name = '', imageSrc = '', description = '', testId = '0'}: CardPr
     <Styles.Card key={testId}>
       <Styles.CardImage src={imageSrc} />
       <Styles.CardContent>
-        <Styles.Name>{name}</Styles.Name>
+        <Styles.Name title={name}>{name}</Styles.Name>
       </Styles.CardContent>
     </Styles.Card>
   )
