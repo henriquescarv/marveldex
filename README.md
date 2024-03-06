@@ -1,46 +1,36 @@
-# Getting Started with Create React App
+# MarvelDex
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+MarvelDex é uma aplicação com o objetivo de consumir a API da Marvel, trazendo listagens de heróis, histórias e autores, possibilitando, também, a filtragem por nome em cada página.
 
-## Available Scripts
+Deploy: [https://globo.com/](https://globo.com/)
 
-In the project directory, you can run:
+![nav](./scr/assets/images/screen_demo.png)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Stack utilizada:
 
-### `npm test`
+Este projeto foi construído utilizando as seguintes tecnologias:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ReactJS: para a criação de toda a interface das páginas;
+- TypeScript: tipagem estática do código;
+- axios: para realizar as chamadas à API.
+- md5: função para a criação do hash das chaves + timestamp, exigido pela API.
+- redux: armazenamento e gerenciamento de estados.
+- react-router-dom: gerenciamento de rotas e navegação entre as páginas.
 
-### `npm run build`
+## Configurações iniciais:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. É necessário possuir o NodeJS/npm instalado;
+2. Clonar este [repositório](https://github.com/henriquescarv/marveldex);
+3. Instalar as dependências utilizando o comando '_npm install_' (ou '_yarn_', se preferir);
+4. Inicializar o projeto utilizando o comando '_npm start_' (ou '_yarn start_', se preferir);
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Navegação:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. É necessário acessar o site oficial da [API da Marvel](https://developer.marvel.com/documentation/getting_started) e obter as suas chaves pública e privada;
+2. Realizar o acesso através da rota '/login' da aplicação;
+3. Caso o acesso seja bem sucedido, a aplicação redirecionará você para a rota '/characters', com a lista de heróis retornada pela API.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [**Henrique Carvalho**](https://github.com/henriquescarv)

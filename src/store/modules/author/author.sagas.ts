@@ -15,8 +15,6 @@ function* getAuthors(action: any): any {
     const baseUrl = `limit=${payload.limit}&offset=${payload.offset}&apikey=${payload.publicKey}&ts=${time}&hash=${hash}`;
     const filter = yield select(state => state.author.authors.filter);
 
-    console.log(filter)
-
     let response;
     if (filter) {
       response = yield call(service.get, `/creators?nameStartsWith=${filter}&${baseUrl}`);
