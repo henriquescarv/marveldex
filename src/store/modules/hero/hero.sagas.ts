@@ -6,8 +6,6 @@ import md5 from "md5";
 
 function* getCharacters(action: any): any {
   const payload = action.payload;
-  // publicKey: '0a1fdf436215f99d674d4d1d9d76e906',
-  // privateKey: 'bcada1ac7be94e76c28a22ddc4530e0326e691cb',
 
   const time = Number(new Date());
   const hash = md5(time + payload.privateKey + payload.publicKey).toString();
