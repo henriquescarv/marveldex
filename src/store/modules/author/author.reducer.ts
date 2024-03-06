@@ -6,6 +6,11 @@ const initialState: AuthorState = {
     filter: '',
     totalItems: 0,
     list: [],
+  },
+  details: {
+    loading: false,
+    data: {},
+    comics: [],
   }
 };
 
@@ -50,6 +55,26 @@ const AuthorReducer = (state = initialState, action: any) => {
             ...action.payload.data.results
           ],
         },
+      }
+    case AuthorActionTypes.SET_LOADING_AUTHOR_DETAILS:
+      return {
+        ...state,
+        details: {
+          ...state.details,
+          loading: action.payload,
+        }
+      }
+    case AuthorActionTypes.SET_AUTHOR_DETAILS:
+      const { authorDetails, creatorComics } = action.payload;
+      console.log(action.payload)
+
+      return {
+        ...state,
+        details: {
+          ...state.details,
+          data: authorDetails.data.results[0],
+          comics: creatorComics.data.results,
+        }
       }
     case AuthorActionTypes.CLEAR_AUTHORS_STATE:
       return {

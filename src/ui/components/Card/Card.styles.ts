@@ -1,10 +1,14 @@
 import styled, { css } from "styled-components";
 
-export const Card = styled.div`
-  ${({ theme }) => css`
+export const Card = styled.a<{
+  clickable?: boolean,
+}>`
+  ${({ theme, clickable = false }) => css`
     border: 1px solid ${theme.colors.highLight};
     border-radius: 16px;
+    cursor: ${clickable && 'pointer'};
     height: 240px;
+    text-decoration: none;
   `};
 `;
 

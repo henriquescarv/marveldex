@@ -3,6 +3,10 @@ export enum AuthorActionTypes {
   SET_AUTHORS = 'SET_AUTHORS',
   SET_LOADING_AUTHORS = 'SET_LOADING_AUTHORS',
 
+  REQUEST_AUTHOR_DETAILS = 'REQUEST_AUTHOR_DETAILS',
+  SET_AUTHOR_DETAILS = 'SET_AUTHOR_DETAILS',
+  SET_LOADING_AUTHOR_DETAILS = 'SET_LOADING_AUTHOR_DETAILS',
+
   SET_AUTHOR_FILTER = 'SET_AUTHOR_FILTER',
   CLEAR_AUTHORS_LIST = 'CLEAR_AUTHORS_LIST',
 
@@ -11,4 +15,5 @@ export enum AuthorActionTypes {
 
 export type AuthorState = {
   authors: any,
+  details: any,
 };

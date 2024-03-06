@@ -29,8 +29,27 @@ function* getAuthors(action: any): any {
   yield put(authorActions.author.setLoading(false));
 };
 
+function* getCharacterDetails(action: any): any {
+  const payload = action.payload;
+  const time = Number(new Date());
+  const hash = md5(time + payload.privateKey + payload.publicKey).toString();
+
+  const baseUrl = `apikey=${payload.publicKey}&ts=${time}&hash=${hash}`;
+
+  yield put(authorActions.authorDetails.setLoading(true));
+  try {
+    const authorDetails = yield call(service.get, `/creators/${payload.authorId}?${baseUrl}`);
+    const creatorComics = yield call(service.get, `/comics?creators=${payload.authorId}&limit=10&${baseUrl}`);
+    yield put(authorActions.authorDetails.set({ authorDetails: authorDetails.data, creatorComics: creatorComics.data }));
+  } catch (error) {
+
+  }
+  yield put(authorActions.authorDetails.setLoading(false));
+};
+
 function* sagas() {
   yield takeLatest(AuthorActionTypes.REQUEST_AUTHORS, getAuthors);
+  yield takeLatest(AuthorActionTypes.REQUEST_AUTHOR_DETAILS, getCharacterDetails);
 };
 
 export default sagas;

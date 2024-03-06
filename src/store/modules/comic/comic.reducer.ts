@@ -6,7 +6,12 @@ const initialState: ComicState = {
     filter: '',
     totalItems: 0,
     list: [],
-  }
+  },
+  details: {
+    loading: false,
+    data: {},
+    creators: [],
+  },
 }
 
 const ComicReducer = (state = initialState, action: any) => {
@@ -50,6 +55,25 @@ const ComicReducer = (state = initialState, action: any) => {
             ...action.payload.data.results
           ],
         },
+      }
+    case ComicActionTypes.SET_LOADING_COMIC_DETAILS:
+      return {
+        ...state,
+        details: {
+          ...state.details,
+          loading: action.payload,
+        }
+      }
+    case ComicActionTypes.SET_COMIC_DETAILS:
+      const { comicDetails, comicCreators } = action.payload;
+
+      return {
+        ...state,
+        details: {
+          ...state.details,
+          data: comicDetails.data.results[0],
+          creators: comicCreators.data.results,
+        }
       }
     case ComicActionTypes.CLEAR_COMICS_STATE:
       return {

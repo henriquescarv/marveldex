@@ -53,7 +53,7 @@ const ComicHandler = () => {
     }
 
     return (
-      <Card name={comic.title} imageSrc={imageSrc} key={comic.id} />
+      <Card name={comic.title} imageSrc={imageSrc} key={comic.id} url={`comics/${comic.id}`} />
     );
   };
 

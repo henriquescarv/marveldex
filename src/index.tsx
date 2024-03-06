@@ -10,6 +10,7 @@ import { ComicHandler } from "pages/ComicHandler";
 import { AuthorHandler } from "pages/AuthorHandler";
 import { LoginHandler } from "pages/LoginHandler";
 import { SnackbarProvider } from "providers/SnackbarProvider/SnackbarProvider";
+import { DetailsHandler } from "pages/DetailsHandler";
 
 const router = createBrowserRouter([
 	{
@@ -22,16 +23,28 @@ const router = createBrowserRouter([
 			},
 			{
 				path: '/characters',
-				element: <HeroHandler />
+				element: <HeroHandler />,
+			},
+			{
+				path: 'characters/:itemId',
+				element: <DetailsHandler />,
 			},
 			{
 				path: '/comics',
 				element: <ComicHandler />
 			},
 			{
+				path: 'comics/:itemId',
+				element: <DetailsHandler />,
+			},
+			{
 				path: '/authors',
 				element: <AuthorHandler />
-			}
+			},
+			{
+				path: 'authors/:itemId',
+				element: <DetailsHandler />,
+			},
 		],
 	}
 ]);

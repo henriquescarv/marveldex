@@ -16,6 +16,21 @@ const setLoadingComics = (loading: boolean) => ({
   payload: { loading },
 });
 
+const requestComicDetails = ({ publicKey, privateKey, comicId }: any) => ({
+  type: ComicActionTypes.REQUEST_COMIC_DETAILS,
+  payload: { publicKey, privateKey, comicId },
+});
+
+const setComicDetails = ({ comicDetails, comicCreators }: any) => ({
+  type: ComicActionTypes.SET_COMIC_DETAILS,
+  payload: { comicDetails, comicCreators }
+});
+
+const setLoadingComicDetails = (payload: any) => ({
+  type: ComicActionTypes.SET_LOADING_COMIC_DETAILS,
+  payload
+});
+
 const clearAllState = () => ({ type: ComicActionTypes.CLEAR_COMICS_STATE });
 const clearComicsList = () => ({ type: ComicActionTypes.CLEAR_COMICS_LIST });
 const setFilter = (filter: string) => ({ type: ComicActionTypes.SET_COMIC_FILTER, payload: { filter } });
@@ -28,7 +43,12 @@ const actions = {
     clearList: clearComicsList,
     setFilter: setFilter,
     clearAll: clearAllState,
-  }
+  },
+  comicDetails: {
+    request: requestComicDetails,
+    set: setComicDetails,
+    setLoading: setLoadingComicDetails,
+  },
 };
 
 export default actions;

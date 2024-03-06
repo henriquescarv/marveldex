@@ -27,10 +27,29 @@ function* getCharacters(action: any): any {
     
   }
   yield put(comicActions.comics.setLoading(false));
-}
+};
+
+function* getCharacterDetails(action: any): any {
+  const payload = action.payload;
+  const time = Number(new Date());
+  const hash = md5(time + payload.privateKey + payload.publicKey).toString();
+
+  const baseUrl = `apikey=${payload.publicKey}&ts=${time}&hash=${hash}`;
+
+  yield put(comicActions.comicDetails.setLoading(true));
+  try {
+    const comicDetails = yield call(service.get, `/comics/${payload.comicId}?${baseUrl}`);
+    const comicCreators = yield call(service.get, `/creators?comics=${payload.comicId}&limit=10&${baseUrl}`);
+    yield put(comicActions.comicDetails.set({ comicDetails: comicDetails.data, comicCreators: comicCreators.data }));
+  } catch (error) {
+
+  }
+  yield put(comicActions.comicDetails.setLoading(false));
+};
 
 function* sagas() {
   yield takeLatest(ComicActionTypes.REQUEST_COMICS, getCharacters);
+  yield takeLatest(ComicActionTypes.REQUEST_COMIC_DETAILS, getCharacterDetails);
 };
 
 export default sagas;

@@ -16,6 +16,21 @@ const setLoadingAuthors = (loading: boolean) => ({
   payload: { loading },
 });
 
+const requestAuthorDetails = ({ publicKey, privateKey, authorId }: any) => ({
+  type: AuthorActionTypes.REQUEST_AUTHOR_DETAILS,
+  payload: { publicKey, privateKey, authorId },
+});
+
+const setAuthorDetails = ({ authorDetails, creatorComics }: any) => ({
+  type: AuthorActionTypes.SET_AUTHOR_DETAILS,
+  payload: { authorDetails, creatorComics }
+});
+
+const setLoadingAuthorDetails = (payload: any) => ({
+  type: AuthorActionTypes.SET_LOADING_AUTHOR_DETAILS,
+  payload
+});
+
 const clearAllState = () => ({ type: AuthorActionTypes.CLEAR_AUTHORS_STATE });
 const clearAuthorsList = () => ({ type: AuthorActionTypes.CLEAR_AUTHORS_LIST });
 const setFilter = (filter: string) => ({ type: AuthorActionTypes.SET_AUTHOR_FILTER, payload: { filter } });
@@ -28,7 +43,12 @@ const actions = {
     clearList: clearAuthorsList,
     setFilter: setFilter,
     clearAll: clearAllState,
-  }
+  },
+  authorDetails: {
+    request: requestAuthorDetails,
+    set: setAuthorDetails,
+    setLoading: setLoadingAuthorDetails,
+  },
 };
 
 export default actions;

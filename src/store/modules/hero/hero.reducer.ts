@@ -6,6 +6,11 @@ const initialState: HeroState = {
     filter: '',
     totalItems: 0,
     list: [],
+  },
+  details: {
+    loading: false,
+    data: {},
+    comics: [],
   }
 };
 
@@ -50,6 +55,25 @@ const HeroReducer = (state = initialState, action: any) => {
             ...action.payload.data.results
           ],
         },
+      }
+    case HeroActionTypes.SET_LOADING_CHARACTER_DETAILS:
+      return {
+        ...state,
+        details: {
+          ...state.details,
+          loading: action.payload,
+        }
+      }
+    case HeroActionTypes.SET_CHARACTER_DETAILS:
+      const { characterDetails, characterComics } = action.payload;
+
+      return {
+        ...state,
+        details: {
+          ...state.details,
+          data: characterDetails.data.results[0],
+          comics: characterComics.data.results,
+        }
       }
     case HeroActionTypes.CLEAR_HERO_STATE:
       return {
