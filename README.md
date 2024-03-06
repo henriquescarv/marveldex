@@ -1,6 +1,6 @@
 # MarvelDex
 
-MarvelDex é uma aplicação que possui o objetivo de consumir a API da Marvel, trazendo listagens de heróis, HQ's e autores, possibilitando, também, a filtragem por nome em cada página. Além disso, é possível acessar a tela de detalhamento do item clicando sobre o seu card.
+MarvelDex é uma aplicação que possui o objetivo de consumir a API da Marvel, trazendo listagens de heróis, HQ's e autores. Permite, também, a filtragem por nome em cada página. Além disso, é possível acessar a tela de detalhamento de qualquer item clicando sobre o seu card.
 
 Deploy: [marveldex.vercel.app](http://marveldex.vercel.app/)
 
@@ -16,9 +16,9 @@ Este projeto foi construído utilizando as seguintes tecnologias:
 - ReactJS: criação de toda a interface das páginas;
 - TypeScript: tipagem estática do código;
 - Styled-components: estilização dinâmica dos componentes;
-- Axios: para realizar as chamadas à API.
-- md5: função criação do hash das chaves + timestamp, exigido pela API.
-- Redux: armazenamento e gerenciamento de estados.
+- Axios: para realizar as chamadas à API;
+- md5: função para a criação do hash das chaves + timestamp, exigido pela API;
+- Redux: armazenamento e gerenciamento de estados;
 - React Router Dom: gerenciamento de rotas e navegação entre as páginas.
 
 ## Configurações iniciais (localhost):
