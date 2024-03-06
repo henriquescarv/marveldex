@@ -1,5 +1,5 @@
 import { call, put, select, takeLatest } from "redux-saga/effects";
-import authorActions from './author.actions';
+import authorActions from "./author.actions";
 import { AuthorActionTypes } from "./author.types";
 import service from "service/service";
 import md5 from "md5";
@@ -27,11 +27,10 @@ function* getAuthors(action: any): any {
     
   }
   yield put(authorActions.author.setLoading(false));
-}
+};
 
 function* sagas() {
   yield takeLatest(AuthorActionTypes.REQUEST_AUTHORS, getAuthors);
 };
 
 export default sagas;
-

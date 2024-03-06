@@ -21,7 +21,7 @@ const useCredentials = () => {
     globalTheme,
     setGlobalTheme,
     clearCredentials,
-  }
+  };
 }
 
 export default useCredentials;

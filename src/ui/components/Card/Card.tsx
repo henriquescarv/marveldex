@@ -1,8 +1,8 @@
 import React from "react";
 import { CardProps } from "./Card.types";
-import * as Styles from './Card.styles';
+import * as Styles from "./Card.styles";
 
-const Card = ({name = '', imageSrc = '', description = '', testId = '0'}: CardProps) => {
+const Card = ({ name = '', imageSrc = '', testId = '0' }: CardProps) => {
   return (
     <Styles.Card key={testId}>
       <Styles.CardImage src={imageSrc} />

@@ -5,4 +5,4 @@ export type ButtonProps = {
   disabled?: boolean,
   normalWidth?: boolean,
   onClick: () => void,
-}
+};

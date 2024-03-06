@@ -1,5 +1,5 @@
 import React, { useCallback, useContext } from "react";
-import * as Styles from './Header.styles'
+import * as Styles from './Header.styles';
 import appLogo from 'assets/images/app_logo.png';
 import NavbarButton from "./components/NavbarButton/NavbarButton";
 import { IconMoon } from "ui/icons/IconMoon";
@@ -39,7 +39,7 @@ const Header = () => {
   };
 
   const handleChangeRoute = (route: string) => {
-    navigate(`/${route}`)
+    navigate(`/${route}`);
   };
 
   const mountThemeIcon = theme.title === 'light' ? <IconMoon size={32} /> : <IconSun size={32} />;
@@ -61,7 +61,7 @@ const Header = () => {
         </Styles.RightButtons>
       </Styles.NavbarWrapper>
     </Styles.Header>
-  )
+  );
 };
 
 export default Header;

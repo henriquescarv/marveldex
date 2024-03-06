@@ -1,8 +1,8 @@
-import React, { createContext, useState } from 'react';
-import { ThemeModeContextProps, ThemeModeProviderProps } from './ThemeModeProvider.types';
-import light from 'styles/themes/light';
-import dark from 'styles/themes/dark';
-import useCredentials from 'hooks/useCredentials/useCredentials';
+import React, { createContext, useState } from "react";
+import { ThemeModeContextProps, ThemeModeProviderProps } from "./ThemeModeProvider.types";
+import light from "styles/themes/light";
+import dark from "styles/themes/dark";
+import useCredentials from "hooks/useCredentials/useCredentials";
 
 const ThemeModeContextDefault = {
 	theme: light,

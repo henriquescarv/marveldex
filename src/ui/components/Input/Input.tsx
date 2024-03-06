@@ -1,6 +1,6 @@
-import React from 'react';
-import { InputProps } from './Input.types';
-import * as Styles from './Input.styles';
+import React from "react";
+import { InputProps } from "./Input.types";
+import * as Styles from "./Input.styles";
 
 const Input = ({
 	id = 'input',

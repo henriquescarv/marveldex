@@ -1,4 +1,4 @@
-import { ThemeContext } from 'styled-components';
+import { ThemeContext } from "styled-components";
 import ColorsProps from "./GetColors.types";
 import { useContext } from "react";
 
@@ -9,7 +9,7 @@ const GetColors = ({ color }: ColorsProps) => {
     primaryDark: theme?.colors.primaryDark,
     primaryLight: theme?.colors.primaryLight,
     defaultLight: theme?.colors.defaultLight,
-  }
+  };
 
   const themeColor = ColorsList[color];
   return themeColor;

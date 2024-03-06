@@ -1,4 +1,4 @@
-import { ComicActionTypes, ComicState } from './comic.types';
+import { ComicActionTypes, ComicState } from "./comic.types";
 
 const initialState: ComicState = {
   comics: {

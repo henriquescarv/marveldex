@@ -1,4 +1,4 @@
-import { call, put, select, takeLatest } from "redux-saga/effects";
+import { call, put, takeLatest } from "redux-saga/effects";
 import { CommonActionTypes } from "./common.types";
 import commonActions from "./common.actions";
 import heroActions from "store/modules/hero/hero.actions";
@@ -45,4 +45,3 @@ function* sagas() {
 };
 
 export default sagas;
-

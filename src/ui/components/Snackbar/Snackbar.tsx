@@ -1,9 +1,9 @@
 
-import React, { useEffect, useRef, useState } from 'react';
-import { SnackbarProps } from './Snackbar.types';
-import * as Styles from './Snackbar.styles';
-import SuccessIcon from 'ui/icons/SuccessIcon/SuccessIcon';
-import DangerIcon from 'ui/icons/DangerIcon/DangerIcon';
+import React, { useEffect, useRef, useState } from "react";
+import { SnackbarProps } from "./Snackbar.types";
+import * as Styles from "./Snackbar.styles";
+import SuccessIcon from "ui/icons/SuccessIcon/SuccessIcon";
+import DangerIcon from "ui/icons/DangerIcon/DangerIcon";
 
 const Snackbar = ({ message='message', status='success', visible }: SnackbarProps) => {
 	const [widthEl, setWidthEl] = useState(450);

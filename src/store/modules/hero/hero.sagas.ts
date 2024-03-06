@@ -1,5 +1,5 @@
 import { call, put, select, takeLatest } from "redux-saga/effects";
-import heroActions from './hero.actions';
+import heroActions from "./hero.actions";
 import { HeroActionTypes } from "./hero.types";
 import service from "service/service";
 import md5 from "md5";
@@ -36,4 +36,3 @@ function* sagas() {
 };
 
 export default sagas;
-

@@ -9,4 +9,3 @@ export type ThemeModeContextProps = {
 export type ThemeModeProviderProps = {
   children: ReactNode;
 };
-

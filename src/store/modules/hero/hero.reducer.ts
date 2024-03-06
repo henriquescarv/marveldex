@@ -1,4 +1,4 @@
-import { HeroActionTypes, HeroState } from './hero.types';
+import { HeroActionTypes, HeroState } from "./hero.types";
 
 const initialState: HeroState = {
   characters: {
@@ -7,7 +7,7 @@ const initialState: HeroState = {
     totalItems: 0,
     list: [],
   }
-}
+};
 
 const HeroReducer = (state = initialState, action: any) => {
   switch(action.type) {

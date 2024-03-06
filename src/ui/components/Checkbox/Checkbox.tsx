@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import * as Styles from "./Checkbox.styles";
 import { CheckboxProps } from "./Checkbox.types";
 
-const Checkbox = ({label = 'checkbox label', isChecked, onChange}: CheckboxProps) => {
+const Checkbox = ({ label = 'checkbox label', isChecked, onChange }: CheckboxProps) => {
   const [checked, setChecked] = useState(isChecked);
 
   const handleChange = () => {

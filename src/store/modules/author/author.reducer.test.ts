@@ -1,5 +1,5 @@
-import AuthorReducer from './author.reducer';
-import { AuthorActionTypes } from './author.types';
+import AuthorReducer from "./author.reducer";
+import { AuthorActionTypes } from "./author.types";
 
 describe('Author Reducer', () => {
   const initialState = {

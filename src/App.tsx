@@ -1,12 +1,12 @@
-import React, { useCallback, useContext, useEffect } from 'react';
-import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { Header } from 'components/Header';
-import { ThemeProvider } from 'styled-components';
-import { ThemeModeContext } from 'providers/ThemeModeProvider/ThemeModeProvider';
-import GlobalStyle from './styles/global'
-import useCredentials from 'hooks/useCredentials/useCredentials';
-import { Snackbar } from 'ui/components/Snackbar';
-import { SnackbarContext } from 'providers/SnackbarProvider/SnackbarProvider';
+import React, { useCallback, useContext, useEffect } from "react";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Header } from "components/Header";
+import { ThemeProvider } from "styled-components";
+import { ThemeModeContext } from "providers/ThemeModeProvider/ThemeModeProvider";
+import GlobalStyle from "./styles/global"
+import useCredentials from "hooks/useCredentials/useCredentials";
+import { Snackbar } from "ui/components/Snackbar";
+import { SnackbarContext } from "providers/SnackbarProvider/SnackbarProvider";
 
 function App() {
   const { publicKey, privateKey } = useCredentials();
@@ -20,20 +20,20 @@ function App() {
 
     const faviconLink = document.querySelector("link[rel*='icon']") as HTMLLinkElement;
     faviconLink.href = `/favicon${randomIconNumber}.png`;
-  }, [])
+  }, []);
 
   const verifyUserCredentials = useCallback(() => {
     if (!publicKey || !privateKey) {
       navigate('/login');
     }
     if (publicKey && privateKey && location.pathname === '/') {
-      navigate('/characters')
+      navigate('/characters');
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [navigate, publicKey, privateKey]);
 
   useEffect(() => {setRandomFavicon()}, [setRandomFavicon]);
-  useEffect(() => {verifyUserCredentials()}, [verifyUserCredentials])
+  useEffect(() => {verifyUserCredentials()}, [verifyUserCredentials]);
 
   return (
     <main className="App">
@@ -45,6 +45,6 @@ function App() {
       </ThemeProvider>
     </main>
   );
-}
+};
 
 export default App;

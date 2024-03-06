@@ -1,5 +1,5 @@
-import React from 'react';
-import { IconProps } from '../IconDefault.types';
+import React from "react";
+import { IconProps } from "../IconDefault.types";
 import * as Styles from "../IconDefault.styles";
 
 const SuccessIcon = ({size=24, color = 'primaryLight'}: IconProps) => (

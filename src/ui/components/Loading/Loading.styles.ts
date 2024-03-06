@@ -1,5 +1,4 @@
-import styled, { css, keyframes } from 'styled-components';
-import lightTheme from 'styles/themes/light';
+import styled, { css, keyframes } from "styled-components";
 
 export const Wrapper = styled.div<{
   size: number

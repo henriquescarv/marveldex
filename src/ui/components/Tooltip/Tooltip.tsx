@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { TooltipProps } from './Tooltip.types';
-import * as Styles from './Tooltip.styles';
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import { TooltipProps } from "./Tooltip.types";
+import * as Styles from "./Tooltip.styles";
 
-const Tooltip = ({message, children, disabled = false}: TooltipProps) => {
+const Tooltip = ({ message, children, disabled = false }: TooltipProps) => {
 	const [hover, setHover] = useState(false);
 	const tooltipWrapper = useRef<HTMLDivElement>(null);
 
@@ -23,6 +23,7 @@ const Tooltip = ({message, children, disabled = false}: TooltipProps) => {
 				current.addEventListener('touchstart', () => setHover(!hover));
 			}
 		};
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	useEffect(() => {

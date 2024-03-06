@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import commonReducer from './common/common.reducer';
-import heroReducer from './hero/hero.reducer';
+import commonReducer from "./common/common.reducer";
+import heroReducer from "./hero/hero.reducer";
 import ComicReducer from "./comic/comic.reducer";
 import AuthorReducer from "./author/author.reducer";
 

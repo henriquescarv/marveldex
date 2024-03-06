@@ -12,7 +12,7 @@ const HeroHandler = () => {
   const { characters } = useSelector((state: any) => state.hero);
   const [filterInput, setFilterInput] = useState(characters.filter);
   
-  const listOffsetRef = useRef(0)
+  const listOffsetRef = useRef(0);
   const dispatch = useDispatch();
   const { publicKey, privateKey } = useCredentials();
 
@@ -45,7 +45,7 @@ const HeroHandler = () => {
   }, [dispatch, filterInput, handleLoadCharacters]);
 
   const mountCard = (character: any) => {
-    const imageSrc = `${character.thumbnail.path}.${character.thumbnail.extension}`
+    const imageSrc = `${character.thumbnail.path}.${character.thumbnail.extension}`;
 
     if (imageSrc.includes('image_not_available')) {
       return;
@@ -53,7 +53,7 @@ const HeroHandler = () => {
 
     return (
       <Card name={character.name} imageSrc={imageSrc} testId={character.id.toString()} />
-    )
+    );
   };
 
   const mountFilter = (

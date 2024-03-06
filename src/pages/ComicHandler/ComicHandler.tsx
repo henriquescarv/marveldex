@@ -8,13 +8,12 @@ import { Button } from "ui/components/Button";
 import { Loading } from "ui/components/Loading";
 import { Filter } from "components/Filter";
 
-
 const ComicHandler = () => {
-  const { comics } = useSelector((state: any) => state.comic)
+  const { comics } = useSelector((state: any) => state.comic);
 
   const [filterInput, setFilterInput] = useState(comics.filter);
 
-  const listOffsetRef = useRef(0)
+  const listOffsetRef = useRef(0);
   const { publicKey, privateKey } = useCredentials();
   const dispatch = useDispatch();
 
@@ -34,7 +33,7 @@ const ComicHandler = () => {
 
   const handleLoadComics = useCallback(() => {
     if (publicKey && privateKey && !comics.loading) {
-      dispatch(comicActions.comics.request({ publicKey: publicKey, privateKey: privateKey, offset: listOffsetRef.current }))
+      dispatch(comicActions.comics.request({ publicKey: publicKey, privateKey: privateKey, offset: listOffsetRef.current }));
       listOffsetRef.current += 70;
     };
   }, [dispatch, publicKey, privateKey, comics.loading]);
@@ -47,7 +46,7 @@ const ComicHandler = () => {
   }, [dispatch, filterInput, handleLoadComics]);
 
   const mountCard = (comic: any) => {
-    const imageSrc = `${comic.thumbnail.path}.${comic.thumbnail.extension}`
+    const imageSrc = `${comic.thumbnail.path}.${comic.thumbnail.extension}`;
 
     if (imageSrc.includes('image_not_available')) {
       return;
@@ -55,7 +54,7 @@ const ComicHandler = () => {
 
     return (
       <Card name={comic.title} imageSrc={imageSrc} testId={comic.id.toString()} />
-    )
+    );
   };
 
   const mountFilter = (
@@ -102,7 +101,6 @@ const ComicHandler = () => {
           )}
         </>
       )}
-
     </Styles.Wrapper>
   );
 };

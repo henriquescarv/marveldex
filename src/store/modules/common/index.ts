@@ -1,1 +1,1 @@
-export { default as commonSagas } from './common.sagas';
+export { default as commonSagas } from "./common.sagas";

@@ -11,4 +11,4 @@ export enum HeroActionTypes {
 
 export type HeroState = {
   characters: any,
-}
+};

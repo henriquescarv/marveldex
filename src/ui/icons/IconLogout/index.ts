@@ -1,1 +1,1 @@
-export { default as IconLogout } from './IconLogout';
+export { default as IconLogout } from "./IconLogout";

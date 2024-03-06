@@ -35,7 +35,7 @@ const LoginHandler = () => {
       return "Fill in the fields correctly";
     }
     return "Accept the cookies to proceed";
-  }
+  };
 
   const mountButtonLabel = loading ? <Loading color="defaultLight" /> : "CONFIRM";
 
@@ -89,7 +89,7 @@ const LoginHandler = () => {
     dispatch(commonActions.status.reset());
   }, [setDisplaySnackbar, dispatch, loginStatus]);
 
-  useEffect(() => { callSnackbar() }, [callSnackbar])
+  useEffect(() => { callSnackbar() }, [callSnackbar]);
   useEffect(() => { redirectToLoggedPage() }, [redirectToLoggedPage]);
 
   return (
@@ -128,7 +128,7 @@ const LoginHandler = () => {
         </Styles.ButtonWrapper>
       </Styles.LoginCard>
     </Styles.Wrapper>
-  )
-}
+  );
+};
 
 export default LoginHandler;

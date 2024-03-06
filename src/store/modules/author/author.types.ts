@@ -11,4 +11,4 @@ export enum AuthorActionTypes {
 
 export type AuthorState = {
   authors: any,
-}
+};

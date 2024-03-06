@@ -1,5 +1,5 @@
 import { call, put, select, takeLatest } from "redux-saga/effects";
-import comicActions from './comic.actions';
+import comicActions from "./comic.actions";
 import { ComicActionTypes } from "./comic.types";
 import service from "service/service";
 import md5 from "md5";
@@ -34,4 +34,3 @@ function* sagas() {
 };
 
 export default sagas;
-

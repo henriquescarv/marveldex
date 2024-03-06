@@ -4,6 +4,6 @@ export type ColorsList = 'primaryDark'
 
 export type ColorsProps = {
   color: ColorsList,
-}
+};
 
 export default ColorsProps;

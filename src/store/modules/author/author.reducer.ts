@@ -1,4 +1,4 @@
-import { AuthorActionTypes, AuthorState } from './author.types';
+import { AuthorActionTypes, AuthorState } from "./author.types";
 
 const initialState: AuthorState = {
   authors: {
@@ -7,7 +7,7 @@ const initialState: AuthorState = {
     totalItems: 0,
     list: [],
   }
-}
+};
 
 const AuthorReducer = (state = initialState, action: any) => {
   switch(action.type) {

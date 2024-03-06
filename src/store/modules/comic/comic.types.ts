@@ -11,4 +11,4 @@ export enum ComicActionTypes {
 
 export type ComicState = {
   comics: any,
-}
+};

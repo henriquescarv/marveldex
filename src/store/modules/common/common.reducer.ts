@@ -1,4 +1,4 @@
-import { CommonActionTypes, CommonState } from './common.types';
+import { CommonActionTypes, CommonState } from "./common.types";
 
 const initialState: CommonState = {
   loading: false,

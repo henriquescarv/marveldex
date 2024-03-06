@@ -12,7 +12,7 @@ const AuthorHandler = () => {
   const { authors } = useSelector((state: any) => state.author);
   const [filterInput, setFilterInput] = useState(authors.filter);
 
-  const listOffsetRef = useRef(0)
+  const listOffsetRef = useRef(0);
   const dispatch = useDispatch();
   const { publicKey, privateKey } = useCredentials();
 
@@ -32,7 +32,7 @@ const AuthorHandler = () => {
 
   const handleLoadAuthors = useCallback(() => {
     if (publicKey && privateKey && !authors.loading) {
-      dispatch(authorActions.author.request({ publicKey: publicKey, privateKey: privateKey, offset: listOffsetRef.current }))
+      dispatch(authorActions.author.request({ publicKey: publicKey, privateKey: privateKey, offset: listOffsetRef.current }));
       listOffsetRef.current += 70;
     };
   }, [dispatch, publicKey, privateKey, authors.loading]);
@@ -45,11 +45,11 @@ const AuthorHandler = () => {
   }, [dispatch, filterInput, handleLoadAuthors]);
 
   const mountCard = (author: any) => {
-    const imageSrc = `${author.thumbnail.path}.${author.thumbnail.extension}`
+    const imageSrc = `${author.thumbnail.path}.${author.thumbnail.extension}`;
 
     return (
       <Card name={author.fullName} imageSrc={imageSrc} testId={author.id.toString()} />
-    )
+    );
   };
 
   const mountFilter = (

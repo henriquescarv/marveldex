@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import lightTheme from 'styles/themes/light';
+import styled, { css } from "styled-components";
+import lightTheme from "styles/themes/light";
 
 export const Snackbar = styled.div<{
   status: 'success' | 'problem'
