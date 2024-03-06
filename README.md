@@ -4,7 +4,7 @@ MarvelDex é uma aplicação com o objetivo de consumir a API da Marvel, trazend
 
 Deploy: [https://globo.com/](https://globo.com/)
 
-![nav](./scr/assets/images/screen_demo.png)
+![nav](./src/assets/images/screen_demo.png)
 
 
 
@@ -29,8 +29,12 @@ Este projeto foi construído utilizando as seguintes tecnologias:
 ## Navegação:
 
 1. É necessário acessar o site oficial da [API da Marvel](https://developer.marvel.com/documentation/getting_started) e obter as suas chaves pública e privada;
-2. Realizar o acesso através da rota '/login' da aplicação;
+2. Realizar o _login_ através da rota '/login' da aplicação, utilizando as chaves obtidas;
 3. Caso o acesso seja bem sucedido, a aplicação redirecionará você para a rota '/characters', com a lista de heróis retornada pela API.
 
+
+
+
+## Desenvolvido por:
 
 - [**Henrique Carvalho**](https://github.com/henriquescarv)
